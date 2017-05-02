@@ -20,12 +20,13 @@ services:
     links:
       - db
     environment:
-      - "DB_PORT=3306"
-      - "DB_HOST=database"
+      DB_PORT: 3306
+      DB_HOST: db
   db:
     image: mysql:5.7
-      environment:
-        - "MYSQL_ROOT_PASSWORD=secret"
-        - "MYSQL_DATABASE=dockerApp"
-      ports:
-        - "33061:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: dockerApp
+    ports:
+      - "33061:3306"
+
